@@ -1,0 +1,281 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div  class="container">
+        <div>
+            <h2 class="title">Đăng ký đồ án nhóm</h2>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link add active" aria-current="page" href="#">Thêm nhóm</a>
+                    </li>
+                    <li class="nav-item list-project">
+                        <a class="danhsach-nhom nav-link disabled" href="#">Danh sách nhóm</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-9">
+                <div class="form-add">
+                    <form id="form-add">
+                        <div class="row customize-row">
+                            <div class="col-4">
+                                <div class="title-add">Tên đồ án</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="nameProject" id="nameProject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row customize-row">
+                            <div class="col-4">
+                                <div class="title-add">Loại đồ án</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="form-check">
+                                    <input class="form-check-input" value="App" type="radio" name="typeProject"
+                                        id="typeProject1" checked>
+                                    <label class="form-check-label" for="typeProject1">
+                                        App
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="Web" type="radio" name="typeProject"
+                                        id="typeProject2">
+                                    <label class="form-check-label" for="typeProject2">
+                                        Web
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row customize-row">
+                            <div class="col-4">
+                                <div class="title-add">Mô tả đồ án</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="mb-3">
+                                    <textarea class="form-control" name="descriptionProject" id="descriptionProject"
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row customize-row">
+                            <div class="col-4">
+                                <div class="title-add">Danh sách thành viên</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row customize-row-member">
+                                    <div class="col-4">
+                                        <div class="title-add-member member">Tên nhóm trưởng</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="col-sm-10">
+                                            <input type="text" name="leader" class="form-control" id="leader">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="title-add-member member">MSSV</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="col-sm-10">
+                                            <input type="text" name="mssvLeader" class="form-control" id="mssvLeader">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row customize-row-member">
+                                    <div class="col-4">
+                                        <div class="title-add-member member">Tên thành viên</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="col-sm-10">
+                                            <input type="text" name="member" class="form-control" id="member">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="title-add-member member">MSSV</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="col-sm-10">
+                                            <input type="text" name="mssvMember" class="form-control" id="mssvMember">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="noi-de-them-thanh-vien">
+
+                                </div>
+                                <button type="button" class="btn btn-link btn-add-member">Thêm thành viên</button>
+                            </div>
+                        </div>
+                        <div class="row customize-row">
+                            <div class="col-12 justify-content-center align-content-center">
+                                <button type="" class="btn btn-dang-ky btn-primary mb-3">Đăng ký</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-list-project">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Tên đồ án</th>
+                                <th scope="col">Loại đồ án</th>
+                                <th scope="col">Nhóm trưởng</th>
+                                <th scope="col">Danh sách thành viên</th>
+                                <th scope="col">Mô tả</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script>
+        const listNav = document.querySelectorAll('.nav-link');
+        const elementAdd = document.querySelector('.form-add');
+        const elementListProject = document.querySelector('.form-list-project');
+        const elementTbody = document.querySelector('tbody');
+        const btnDangKy = document.querySelector('.btn-dang-ky');
+        const nameProject = document.querySelector('input[name="nameProject"]');
+        const typeProject = document.querySelector('input[name="typeProject"]:checked');
+        const descriptionProject = document.querySelector('textarea[name="descriptionProject"]');
+        const leader = document.querySelector('input[name="leader"]');
+        const mssvLeader = document.querySelector('input[name="mssvLeader"]');
+        const btnListProject = document.querySelector('.danhsach-nhom');
+
+        const formAdd = document.getElementById('form-add');
+        const noiDeThemThanhVien = document.querySelector('.noi-de-them-thanh-vien');
+        const btnAddMember = document.querySelector('.btn-add-member');
+
+        var member = 0;
+
+        btnAddMember.onclick = () => {
+            member++;
+            renderAddMember();
+        }
+
+        const renderAddMember = () => {
+            var html1 =``;
+            for (i = 0; i < member; i++) {
+                html1 += `<div class="row customize-row-member">
+                                    <div class="col-4">
+                                        <div class="title-add-member member">Tên thành viên</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="col-sm-10">
+                                            <input type="text" name="member" class="form-control" id="member">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="title-add-member member">MSSV</div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="col-sm-10">
+                                            <input type="text" name="mssvMember" class="form-control" id="mssvMember">
+                                        </div>
+                                    </div>
+                                </div>`
+            }
+            noiDeThemThanhVien.innerHTML = html1;
+        }
+
+        listNav.forEach(element => {
+            element.onclick = () => {
+                listNav.forEach(element1 => {
+                    element1.classList.remove('active')
+                })
+                element.classList.add('active');
+                if (element.classList.contains('add')) {
+                    elementAdd.style.display = 'flex'
+                    elementListProject.style.display = 'none'
+                } else {
+                    elementAdd.style.display = 'none'
+                    elementListProject.style.display = 'flex'
+                }
+            }
+        });
+
+        var listProject = [
+
+        ]
+
+        const render = () => {
+            const html = listProject.map((element, index) => (
+                `<tr>
+                <th scope="row">${index + 1}</th>
+                <td>${element.nameProject}</td>
+                <td>${element.typeProject}</td>
+                <td>${element.leader}</td>
+                <td>${element.member.map(member => (
+                    `<h6>${member}</h6>`
+                ))}</td>
+                <td>${element.descriptionProject}</td>
+            </tr>`
+            ))
+            elementTbody.innerHTML = html.join('');
+        }
+
+
+        btnDangKy.onclick = (e) => {
+            e.preventDefault();
+            const listMember = document.querySelectorAll('input[name="member"]');
+            const listMssvMember = document.querySelectorAll('input[name="mssvMember"]');
+
+            const listMember1 = [];
+            for (i = 0; i < listMember.length; i++) {
+                listMember1.push(listMssvMember[i].value)
+            }
+
+            var description = descriptionProject.value.trim();
+            var newDescription = ``;
+            if(description.split(/\s+/).length > 10) {
+                description = description.split(' ');
+                for(i = 0; i < 10; i ++) {
+                    newDescription += description[i]+ ' '
+                }
+                newDescription += '...'
+            } else {
+                newDescription = description;
+            }
+
+            const Data = {
+                nameProject: nameProject.value,
+                typeProject: typeProject.value,
+                descriptionProject: newDescription,
+                leader: leader.value + " - " + mssvLeader.value,
+                member: listMember1,
+            }
+            listProject.push(Data);
+            btnListProject.classList.remove('disabled');
+            formAdd.reset();
+            member = 0;
+            renderAddMember();
+            render();
+        }
+    </script>
+</body>
+
+</html>

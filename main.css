@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(133, 133, 133);
+}
+
+.title{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.navbar-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-list-project{
+    display: none;
+}
+
+.customize-row{
+    border-top: 1px solid rgb(133, 133, 133);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.title-add{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.customize-row-member{
+    border-top: 1px solid rgb(197, 197, 197);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.member{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container{
+    background-color: white;
+}
