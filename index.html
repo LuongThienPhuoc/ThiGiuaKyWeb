@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div  class="container">
+    <div class="container body">
         <div>
             <h2 class="title">Đăng ký đồ án nhóm</h2>
         </div>
@@ -46,7 +46,7 @@
                             <div class="col-8">
                                 <div class="form-check">
                                     <input class="form-check-input" value="App" type="radio" name="typeProject"
-                                        id="typeProject1" checked>
+                                        id="typeProject1">
                                     <label class="form-check-label" for="typeProject1">
                                         App
                                     </label>
@@ -143,6 +143,9 @@
                 </div>
             </div>
         </div>
+        <div class="customize-alert alert alert-success" role="alert">
+            A simple success alert—check it out!
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -160,7 +163,6 @@
         const elementTbody = document.querySelector('tbody');
         const btnDangKy = document.querySelector('.btn-dang-ky');
         const nameProject = document.querySelector('input[name="nameProject"]');
-        const typeProject = document.querySelector('input[name="typeProject"]:checked');
         const descriptionProject = document.querySelector('textarea[name="descriptionProject"]');
         const leader = document.querySelector('input[name="leader"]');
         const mssvLeader = document.querySelector('input[name="mssvLeader"]');
@@ -169,16 +171,15 @@
         const formAdd = document.getElementById('form-add');
         const noiDeThemThanhVien = document.querySelector('.noi-de-them-thanh-vien');
         const btnAddMember = document.querySelector('.btn-add-member');
-
+        const Alert = document.querySelector('.customize-alert');
         var member = 0;
 
         btnAddMember.onclick = () => {
             member++;
             renderAddMember();
         }
-
         const renderAddMember = () => {
-            var html1 =``;
+            var html1 = ``;
             for (i = 0; i < member; i++) {
                 html1 += `<div class="row customize-row-member">
                                     <div class="col-4">
@@ -243,6 +244,7 @@
             e.preventDefault();
             const listMember = document.querySelectorAll('input[name="member"]');
             const listMssvMember = document.querySelectorAll('input[name="mssvMember"]');
+            const typeProject = document.querySelector('input[name="typeProject"]:checked');
 
             const listMember1 = [];
             for (i = 0; i < listMember.length; i++) {
@@ -251,30 +253,47 @@
 
             var description = descriptionProject.value.trim();
             var newDescription = ``;
-            if(description.split(/\s+/).length > 10) {
+            if (description.split(/\s+/).length > 10) {
                 description = description.split(' ');
-                for(i = 0; i < 10; i ++) {
-                    newDescription += description[i]+ ' '
+                for (i = 0; i < 10; i++) {
+                    newDescription += description[i] + ' '
                 }
                 newDescription += '...'
             } else {
                 newDescription = description;
             }
-
-            const Data = {
-                nameProject: nameProject.value,
-                typeProject: typeProject.value,
-                descriptionProject: newDescription,
-                leader: leader.value + " - " + mssvLeader.value,
-                member: listMember1,
+            if (nameProject.value === "" || typeProject === null || descriptionProject.value === "" || leader.value === "" || mssvLeader.value === "") {
+                Alert.classList.remove('alert-success');
+                Alert.classList.add('alert-danger');
+                Alert.style.display='flex';
+                Alert.innerText = "Vui lòng nhập đầy đủ các trường thông tin!"
+                setTimeout(()=> {Alert.style.display='none'}, 3000); 
+            } else {
+                Alert.classList.remove('alert-danger');
+                Alert.classList.add('alert-success');
+                Alert.style.display='flex';
+                Alert.innerText = "Thêm thành công!"
+                const Data = {
+                    nameProject: nameProject.value,
+                    typeProject: typeProject.value,
+                    descriptionProject: newDescription,
+                    leader: leader.value + " - " + mssvLeader.value,
+                    member: listMember1,
+                }
+                listProject.push(Data);
+                btnListProject.classList.remove('disabled');
+                formAdd.reset();
+                member = 0;
+                renderAddMember();
+                render();
+                setTimeout(()=> {Alert.style.display='none'}, 3000); 
             }
-            listProject.push(Data);
-            btnListProject.classList.remove('disabled');
-            formAdd.reset();
-            member = 0;
-            renderAddMember();
-            render();
         }
+
+        Alert.onclick = () => {
+            Alert.style.display = 'none'
+        }
+        
     </script>
 </body>
 
